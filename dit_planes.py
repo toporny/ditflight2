@@ -33,6 +33,10 @@ class Planes():
     print (x)
 
 
+  # returns PlanesArray
+  def getPlanesArray(self):
+    return self.__planes_array
+
 
   # shows available planes for range
   def showAvailablePlanes(self, maxRange):
