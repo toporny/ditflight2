@@ -17,6 +17,7 @@ class myIoLibrary():
     self.__columns = fileNameParams[1]
     self.__passFirstLine = fileNameParams[2]
 
+
   # check integrity and gets data from file
   def getDataFromFile(self):
 

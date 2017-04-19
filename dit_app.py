@@ -159,9 +159,9 @@ class App():
 
 
 
-	def calculate(self):
+	def calculate(self, travel_points):
 		#travel_points =['DUB', 'GDN', 'GLO', 'LTN', 'CVT', 'DUB']
-		travel_points =['DUB', 'GDN', 'BVA', 'WAW', 'DUB']
+		
 
 
 		# a =  self.calculateOneDistance('DUB', 'GDN')
