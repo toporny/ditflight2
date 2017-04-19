@@ -9,9 +9,8 @@ class Airport():
 	Class Planes - keeps array of every plane
 	"""
 
-	__airport_array = []
-	airport_dict = {}
-
+	__airport_array = []  # private airport array
+	airport_dict = {}     # public airport array
   
 	def __init__(self):
 		e = dit_io_library.myIoLibrary(dit_conf.config['airports_file'])
@@ -29,6 +28,7 @@ class Airport():
 
 
 
+	# checks if airport exist in database
 	def airportExist(self, airPortCode):
 		if (airPortCode in self.airport_dict):
 			return True
@@ -36,18 +36,22 @@ class Airport():
 			return False
 
 
+	# returns airport latitude
 	def getAirportLatitude(self, airPortCode):
 		return self.airport_dict[airPortCode]['airportLatitude']
 
 
+	# returns airport longtitude
 	def getAirporttLongtitude(self, airPortCode):
 		return self.airport_dict[airPortCode]['airporttLongtitude']
 
 
+	# returns airport full name
 	def getAirportName(self, airPortCode):
 		return self.airport_dict[airPortCode]['airportName']
 
 
+	# returns country name from airport record
 	def getAirportCountry(self, airPortCode):
 		return self.airport_dict[airPortCode]['airportCountry']
 

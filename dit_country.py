@@ -23,12 +23,13 @@ class Country():
       self.countries_dict_by_currency[row[14]] = {'name': row[0], 'currency_code': row[14] }
       self.countries_dict_by_name[row[0]] = {'name': row[0], 'currency_code': row[14] }
 
+
+  # returns whole dictionary of countries indexed by currency code
   def getCountryDict(self):
     return self.countries_dict_by_currency
 
 
-
-  # show currency table
+  # show country table
   def showCountryTable(self):
     x = prettytable.PrettyTable(["CURRENCY","NAME"])
     for key in self.countries_dict_by_currency:

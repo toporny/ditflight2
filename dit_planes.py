@@ -5,13 +5,12 @@ import dit_conf
 import dit_io_library
 
 class Planes():
-
   """
   Class Planes - keeps array of every plane
   """
+
   __planes_array = []
   __planes_objects = []
-
 
 
   def __init__(self):
@@ -21,10 +20,8 @@ class Planes():
       self.__planes_objects.append(self.Aircraft(row))
 
 
+  # shows all planes inside nice table
   def showPlanesTable(self):
-    """
-    shows all planes inside nice table
-    """    
     x = prettytable.PrettyTable(['CODE','TYPE','MANUFACTURER','RANGE(km)'])
     for aircraft in self.__planes_objects:
       row = []
@@ -37,10 +34,8 @@ class Planes():
 
 
 
+  # shows available planes for range
   def showAvailablePlanes(self, maxRange):
-    """
-    shows available planes for range
-    """
     x = prettytable.PrettyTable(['CODE','TYPE','MANUFACTURER','RANGE(km)'])
     for aircraft in self.__planes_objects:
       if (int(aircraft.getRangeKm()) > maxRange):
@@ -66,27 +61,29 @@ class Planes():
       self.__range = dataArray[4]
 
     
+    # returns aircraft code
     def getCode(self):
       return self.__code
 
     
+    # returns type code
     def getType(self):
       return self.__type
 
     
+    # returns unit for aircraft
     def getUnits(self):
       return self.__units
 
     
+    # returns aircraft's manufacturer
     def getManufacturer(self):
       return self.__manufacturer
 
 
       
+    # Recognizes units and returns mile range for plane
     def getRangeMile(self):
-      """
-      Recognizes units and returns mile range for plane
-      """
       if (self.__units == 'imperial'):
         return self.__range
       elif (self.__range == 'metric'):
@@ -96,10 +93,8 @@ class Planes():
         sys.exit(-1)
 
 
+    # Recognizes units and returns km range for plane
     def getRangeKm(self):
-      """
-      Recognizes units and returns km range for plane
-      """
       if (self.__units == 'metric'):
         return self.__range
       elif (self.__units == 'imperial'):

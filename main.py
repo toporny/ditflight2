@@ -13,6 +13,8 @@ import sys
 
 
 def main():
+    print (1000000*6.29E-05)
+    sys.exit(1)
     planes = dit_planes.Planes()
     currency = dit_currency_rates.CurrencyRate()
     airport = dit_airport.Airport()
