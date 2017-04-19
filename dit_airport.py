@@ -6,7 +6,7 @@ import dit_io_library
 
 class Airport():
 	"""
-	Class Planes - keeps array of every plane
+	Class Airport - keeps array of every aiport
 	"""
 
 	__airport_array = []  # private airport array

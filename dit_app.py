@@ -57,6 +57,7 @@ class App():
 		if (country_name in oCountry.countries_dict_by_name):
 			return oCountry.countries_dict_by_name[country_name]['currency_code']
 		else:
+			#print ('Error __getCountryCode ',country_name)
 			return False
 
 
@@ -64,6 +65,7 @@ class App():
 		if (currency_code in oCurrency.rates_dict):
 			return oCurrency.rates_dict[currency_code]['rate1']
 		else:
+			#print ('Error __getCurrencyRate1 ',currency_code)
 			return False
 
 
