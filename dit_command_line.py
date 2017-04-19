@@ -1,6 +1,6 @@
 import sys
 
-def CommandLine():
+def CommandLine(airport):
 
 
 	if (len(sys.argv) == 1):
@@ -40,9 +40,14 @@ def CommandLine():
 
 	elif ("," in sys.argv[1]):
 		airports = sys.argv[1].upper().split(',')
+
+		for i in airports:
+			if (airport.airportExist(i) == False):
+				print ("airport",i, "don't exist!")
+				sys.exit(1)
+		
 		airports.append(airports[0])
 		return_val = airports
-		print (return_val)
 
 
 

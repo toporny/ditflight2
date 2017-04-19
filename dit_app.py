@@ -160,30 +160,13 @@ class App():
 
 
 	def calculate(self, travel_points):
-		#travel_points =['DUB', 'GDN', 'GLO', 'LTN', 'CVT', 'DUB']
-		
-
-
-		# a =  self.calculateOneDistance('DUB', 'GDN')
-		# print (a)
-		# sys.exit(1)
 
 		self.__elements_counter = len(travel_points)
 		first_element = travel_points.pop(0) # remove first element
-		last_element = travel_points.pop()
-		# after removing first_element travel_points has 3 elements = ['GDN','BVA','WAW']
+		last_element = travel_points.pop() # temporary remove last element as well
 		data_for_permutation = itertools.permutations(travel_points)
-		# __data_for_permutation now equals = 
-		# ('GDN', 'BVA', 'WAW'),
-		# ('GDN', 'WAW', 'BVA'),
-		# ('BVA', 'GDN', 'WAW'),
-		# ('BVA', 'WAW', 'GDN'),
-		# ('WAW', 'GDN', 'BVA'),
-		# ('WAW', 'BVA', 'GDN')	
 
-		# now I have to add starting and (the same as starting) landing point for __data_for_permutation
-		
-
+		# create_possible_flight_list:
 		self.__create_possible_flight_list(data_for_permutation, first_element, last_element )
 
 
@@ -328,6 +311,16 @@ class App():
 
 	def getLongestSingleTrip(self):
 		return self.__distance_matrix[self.__cheapest_trip_index][-2]
+
+
+	def getShortestKmSummary(self):
+		return self.__distance_matrix[self.__shortest_trip_index][-1]
+
+	
+	def getCheapestKmSummary(self):
+		return self.__distance_matrix[self.__cheapest_trip_index][-1]
+
+
 
 
 

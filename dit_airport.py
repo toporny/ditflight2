@@ -30,6 +30,11 @@ class Airport():
 		#print (self.airport_dict)
 
 
+	def airportExist(self, airPortCode):
+		if (airPortCode in self.airport_dict):
+			return True
+		else:
+			return False
 
 	def getAirportLatitude(self, airPortCode):
 		return self.airport_dict[airPortCode]['airportLatitude']
@@ -46,7 +51,6 @@ class Airport():
 	def getAirportCountry(self, airPortCode):
 		return self.airport_dict[airPortCode]['airportCountry']
 
-# 668,Lech Walesa,Gdansk,Poland,GDN,EPGD,54.377569,18.466222,489,1,E,Europe/Warsaw
 
 	# show currency table
 	def showAirportTable(self):
