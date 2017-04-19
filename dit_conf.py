@@ -1,3 +1,5 @@
+# configuration data file
+
 config = {
 	# index                | filename                     columns,    ignore_first_row  
 	'currencyrates_file'   : ['csv_data/currencyrates.csv',   4,      False],

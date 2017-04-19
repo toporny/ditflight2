@@ -9,10 +9,11 @@ class CurrencyRate():
   Class Planes - keeps array of every plane
   """
 
-  __currencies_array = []
-  currencies_dict = {}
+  __currencies_array = [] # priavate array
+  currencies_dict = {} # public dict
 
   
+  # constructor
   def __init__(self):
     e = dit_io_library.myIoLibrary(dit_conf.config['currencyrates_file'])
     self.__currencies_array = e.getDataFromFile()

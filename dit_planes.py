@@ -36,6 +36,24 @@ class Planes():
     print (x)
 
 
+
+  def showAvailablePlanes(self, maxRange):
+    """
+    shows available planes for range
+    """
+    x = prettytable.PrettyTable(['CODE','TYPE','MANUFACTURER','RANGE(km)'])
+    for aircraft in self.__planes_objects:
+      if (int(aircraft.getRangeKm()) > maxRange):
+        row = []
+        row.append(aircraft.getCode())
+        row.append(aircraft.getType())
+        row.append(aircraft.getManufacturer())
+        row.append(aircraft.getRangeKm())
+        x.add_row(row)
+    print (x)
+
+
+
   class Aircraft():
     """
     Class Plane and all converting methods mile<=>km
@@ -59,10 +77,10 @@ class Planes():
     def getUnits(self):
       return self.__units
 
-
     
     def getManufacturer(self):
       return self.__manufacturer
+
 
       
     def getRangeMile(self):
@@ -89,3 +107,4 @@ class Planes():
       else:
         print ("Fatal error. Plane unit not specified.")
         sys.exit(-1)
+

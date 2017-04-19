@@ -6,20 +6,18 @@ import dit_io_library
 
 class Country():
   """
-  Class Planes - keeps array of every plane
+  Class Planes - keeps array of every country
   """
 
-  __countries_array = []
-  countries_dict_by_currency = {}
-  countries_dict_by_name = {}
+  __countries_array = [] # private array
+  countries_dict_by_currency = {} # public dict
+  countries_dict_by_name = {} # public dict
 
 
-  
+  # constructor
   def __init__(self):
     e = dit_io_library.myIoLibrary(dit_conf.config['countrycurrency_file'])
     self.__countries_array = e.getDataFromFile()
-    # print (self.__countries_array)
-    # sys.exit()
 
     for row in self.__countries_array:
       self.countries_dict_by_currency[row[14]] = {'name': row[0], 'currency_code': row[14] }

@@ -27,7 +27,6 @@ class Airport():
 			}
 			self.airport_dict[row[4]] = tmp_dic
 
-		#print (self.airport_dict)
 
 
 	def airportExist(self, airPortCode):
@@ -35,6 +34,7 @@ class Airport():
 			return True
 		else:
 			return False
+
 
 	def getAirportLatitude(self, airPortCode):
 		return self.airport_dict[airPortCode]['airportLatitude']

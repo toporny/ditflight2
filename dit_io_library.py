@@ -4,6 +4,9 @@ import os.path
 
 
 class myIoLibrary():
+  """ this class is responsble to reading and checking integrity of data files """
+
+  # private variables
 
   __fileName = ''
   __columns = 0
@@ -28,7 +31,7 @@ class myIoLibrary():
 
     # check different possible type of reading error
     try:
-      file  = open(self.__fileName, "rt", encoding="utf8")
+      file  = open(self.__fileName, "rt", encoding = "utf8")
       read = csv.reader(file)
     except IOError as e:
       print ("I/O error with opening file", self.__fileName)
@@ -43,7 +46,7 @@ class myIoLibrary():
         rowcount = rowcount + 1
       if (rowcount != 1):
         if (len(row) != self.__columns):
-          print ("file "+ self.__fileName+" error! line "+str(rowcount)+ '. Has to be exactly '+str(self.__columns)+' columns!')
+          print ("file " + self.__fileName+" error! line " + str(rowcount)+ '. Has to be exactly ' + str(self.__columns) + ' columns!')
           sys.exit(-1)
         self.__data.append(row)
     file.close()
