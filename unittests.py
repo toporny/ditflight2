@@ -5,7 +5,6 @@ import dit_io_library
 import dit_airport
 import dit_country
 import dit_command_line
-import dit_currencies
 import dit_app
 import sys
 
@@ -51,20 +50,20 @@ class TestedValues(unittest.TestCase):
 
 	# test currency exist (assertTrue)
 	def test_currencyExist(self):
-		currency = dit_currencies.CurrencyRate()
-		self.assertTrue('PLN' in currency.currencies_dict)
+		currency = dit_currency_rates.CurrencyRate()
+		self.assertTrue('PLN' in currency.rates_dict)
 
 
 	# test currency not exist (assertFalse)
 	def test_currencyExist(self):
-		currency = dit_currencies.CurrencyRate()
-		self.assertFalse('XXX' in currency.currencies_dict) ## XXX currency not exist
+		currency = dit_currency_rates.CurrencyRate()
+		self.assertFalse('XXX' in currency.rates_dict) ## XXX currency not exist
 
 
 	# test distance beetwean two airports
 	def test_currencyExist(self):
-		currency = dit_currencies.CurrencyRate()
-		self.assertFalse('XXX' in currency.currencies_dict) ## XXX currency not exist
+		currency = dit_currency_rates.CurrencyRate()
+		self.assertFalse('XXX' in currency.rates_dict) ## XXX currency not exist
 
 
 	def test_cheapestPrice(self):
