@@ -155,9 +155,12 @@ class App():
 
 	def calculate(self, travel_points):
 
-		self.__elements_counter = len(travel_points)
 		first_element = travel_points.pop(0) # remove first element
 		last_element = travel_points.pop() # temporary remove last element as well
+
+		travel_points = list(set(travel_points))
+		self.__elements_counter = len(travel_points)
+		
 		data_for_permutation = itertools.permutations(travel_points)
 
 
