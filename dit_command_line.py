@@ -32,7 +32,7 @@ def CommandLine(airport):
 	elif (sys.argv[1] == "--show-airports"):
 		return_val ='airport.showAirportTable()'
 
-	elif (sys.argv[1] == "--show-currency"):
+	elif (sys.argv[1] == "--show-rates"):
 		return_val ='currency.showCurrencyRateTable()'
 	
 	elif (sys.argv[1] == "--show-countries"):

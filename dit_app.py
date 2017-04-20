@@ -73,8 +73,7 @@ class App():
 	def __getPetrolPrice(self, airPortCodeName):
 		return self.__appData[airPortCodeName]['currency_rate1']
 
-
-
+	
 	def __calculateOneDistance(self, airport1_code, airport2_code):
 
 		lat1  = float ( self.__oAirport.getAirportLatitude(airport1_code) )
@@ -160,7 +159,7 @@ class App():
 
 		travel_points = list(set(travel_points))
 		self.__elements_counter = len(travel_points)
-		
+
 		data_for_permutation = itertools.permutations(travel_points)
 
 
@@ -229,6 +228,13 @@ class App():
 		    s=s+myArray[i]+','
 		s=s[:-1]
 		return s
+
+
+	# only for unit test - it can be deleted later on
+	def getDataForUnitTest(self):
+		return self.__appData
+
+
 
 
 	def showResults(self):
