@@ -54,18 +54,6 @@ class TestedValues(unittest.TestCase):
 		self.assertTrue('PLN' in currency.rates_dict)
 
 
-	# test currency not exist (assertFalse)
-	def test_currencyExist(self):
-		currency = dit_currency_rates.CurrencyRate()
-		self.assertFalse('XXX' in currency.rates_dict) ## XXX currency not exist
-
-
-	# test distance beetwean two airports
-	def test_currencyExist(self):
-		currency = dit_currency_rates.CurrencyRate()
-		self.assertFalse('XXX' in currency.rates_dict) ## XXX currency not exist
-
-
 	def test_cheapestRoute(self):
 		trip = ['DUB', 'BVA', 'GDN', 'MSQ', 'DUB']
 		planes = dit_planes.Planes()
