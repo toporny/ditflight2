@@ -9,9 +9,6 @@ import dit_app
 import sys
 
 
-
-
-
 def main():
 
     planes = dit_planes.Planes()

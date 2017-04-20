@@ -2,6 +2,7 @@ import sys
 import math
 import itertools
 import prettytable
+import webbrowser
 
 class App():
 	"""
@@ -280,3 +281,13 @@ class App():
 		column2 = str(self.getLongestSingleTrip())+' km'
 		x.add_row([column1, column2])
 		print (x)
+
+		final_string = ''
+		arr = self.getShortestRoute()
+		for i in range(0, len(arr)-1):
+			final_string = final_string + arr[i] + ','
+		webbrowser.open('http://alltic.home.pl/maps/?airports='+final_string[:-1])
+
+
+
+
