@@ -286,7 +286,7 @@ class App():
 		arr = self.getShortestRoute()
 		for i in range(0, len(arr)-1):
 			final_string = final_string + arr[i] + ','
-		webbrowser.open('http://alltic.home.pl/maps/?airports='+final_string[:-1])
+		webbrowser.open('http://alltic.home.pl/d16127504/?airports='+final_string[:-1])
 
 
 
