@@ -47,67 +47,60 @@ if (count($arr)>9){
         });
 
         positions = [
-<?php
-if (($handle = fopen("airport.csv", "r")) !== FALSE) {
-   $result_array = array();
-    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        $row++;
-        if (in_array($data[4], $arr)) {
-          $result_array[$data[4]] =  array($data[6], $data[7], $data[1], $data[2], $data[3], $data[4]);
-        #echo "          {name :'".$data[4]."', lat: ". $data[6] . ", long: ". $data[7] . "},\n";
-        }
-    }
-    fclose($handle);
-foreach($arr as $key =>$item) {
-            echo "          {name :'".$item."', lat: ". $result_array[$item][0] . ", long: ". $result_array[$item][1]  .  ", name1: '". $result_array[$item][2]."', name2: '". $result_array[$item][3]."', name3: '". $result_array[$item][4].  "'},\n";
-}
-
-#print_r($result_array);
-#exit;
-}
-?>
+		<?php
+			if (($handle = fopen("airport.csv", "r")) !== FALSE) {
+				$result_array = array();
+				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+					$row++;
+					if (in_array($data[4], $arr)) {
+					$result_array[$data[4]] =  array($data[6], $data[7], $data[1], $data[2], $data[3], $data[4]);
+					}
+				}
+				fclose($handle);
+				foreach($arr as $key =>$item) {
+					echo "          {name :'".$item."', lat: ". $result_array[$item][0] . ", long: ". $result_array[$item][1]  .  ", name1: '". $result_array[$item][2]."', name2: '". $result_array[$item][3]."', name3: '". $result_array[$item][4].  "'},\n";
+				}
+			}
+		?>
         ];
 
         var latlngbounds = new google.maps.LatLngBounds();
         var flightPlanCoordinates = [];
         for (i=0;i<positions.length; i++) {
-            console.log(positions[i].name);
-            console.log(positions[i].lat);
-            console.log(positions[i].long);
-            flightPlanCoordinates.push({lat: positions[i].lat, lng: positions[i].long});
-            myLatLng = {lat: positions[i].lat, lng: positions[i].long};
-            latlngbounds.extend( myLatLng );
-            addMarker2(myLatLng, map, positions[i].name, positions[i].name1, positions[i].name2, positions[i].name3 );
+	        console.log(positions[i].name);
+	        console.log(positions[i].lat);
+	        console.log(positions[i].long);
+	        flightPlanCoordinates.push({lat: positions[i].lat, lng: positions[i].long});
+	        myLatLng = {lat: positions[i].lat, lng: positions[i].long};
+	        latlngbounds.extend( myLatLng );
+	        addMarker2(myLatLng, map, positions[i].name, positions[i].name1, positions[i].name2, positions[i].name3 );
         }
         map.fitBounds(latlngbounds);
 
         var flightPath = new google.maps.Polyline({
-          path: flightPlanCoordinates,
-          geodesic: true,
-          strokeColor: '#FF0000',
-          strokeOpacity: 1.0,
-          strokeWeight: 2
+			path: flightPlanCoordinates,
+			geodesic: true,
+			strokeColor: '#FF0000',
+			strokeOpacity: 1.0,
+			strokeWeight: 2
         });
 
 
-        var flightPlanCoordinates = [];
-        flightPlanCoordinates.push({lat: positions[positions.length-1].lat, lng: positions[positions.length-1].long});
-        flightPlanCoordinates.push({lat: positions[0].lat, lng: positions[0].long});
+		var flightPlanCoordinates = [];
+		flightPlanCoordinates.push({lat: positions[positions.length-1].lat, lng: positions[positions.length-1].long});
+		flightPlanCoordinates.push({lat: positions[0].lat, lng: positions[0].long});
 
-        var flightPath2 = new google.maps.Polyline({
-          path: flightPlanCoordinates,
-          geodesic: true,
-          strokeColor: '#FF00FF',
-          strokeOpacity: 1.0,
-          strokeWeight: 2
-        });
+		var flightPath2 = new google.maps.Polyline({
+			path: flightPlanCoordinates,
+			geodesic: true,
+			strokeColor: '#FF00FF',
+			strokeOpacity: 1.0,
+			strokeWeight: 2
+		});
 
-        flightPlanCoordinates.push({lat: positions[0].lat, lng: positions[0].long});
-
-        flightPath2.setMap(map);
-
-        flightPath.setMap(map);
-
+		flightPlanCoordinates.push({lat: positions[0].lat, lng: positions[0].long});
+		flightPath2.setMap(map);
+		flightPath.setMap(map);
       }
 
       // Adds a marker to the map.
@@ -127,10 +120,7 @@ foreach($arr as $key =>$item) {
           infowindow.open(map, marker);
         });
       }
-
-
       google.maps.event.addDomListener(window, 'load', initialize);
-
     </script>
   </head>
   <body>

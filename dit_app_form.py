@@ -160,7 +160,7 @@ class ditForm:
 
     # opens browser with shortest map
     def showShortestMap(self):
-        url = 'http://alltic.home.pl/d16127504/?airports='
+        url = 'http://alltic.home.pl/d16127504/python_assigment/?airports='
         airports = copy.copy(self.__app.getCheapestRoute())
         airports.pop(-1)
         for airport in airports:
@@ -170,7 +170,7 @@ class ditForm:
 
     # opens browser with cheapest map
     def showCheapestMap(self):
-        url = 'http://alltic.home.pl/d16127504/?airports='
+        url = 'http://alltic.home.pl/d16127504/python_assigment/?airports='
         airports = copy.copy(self.__app.getShortestRoute())
         airports.pop(-1)
         for airport in airports:
