@@ -7,11 +7,15 @@ $ python main.py
 ```
 
 Main screen:
+
 ![N](img/screen.png)
 
 Cheapest map:
-![N](img/chepaest_map.png)
+
+![N](img/cheapest_map.png)
+
 
 Shortest map:
+
 ![N](img/shortest_map.png)
 
