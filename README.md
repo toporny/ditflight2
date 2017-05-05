@@ -10,12 +10,12 @@ Main screen:
 
 ![N](img/screen.png)
 
-Cheapest map:
+Cheapest route map:
 
 ![N](img/cheapest_map.png)
 
 
-Shortest map:
+Shortest route map:
 
 ![N](img/shortest_map.png)
 
