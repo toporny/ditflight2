@@ -1,4 +1,7 @@
 # ditflight2 + Google Map integration
+
+System calculates prices and distances between airports. 
+
 Made with python 3.6.0
 
 ```sh
